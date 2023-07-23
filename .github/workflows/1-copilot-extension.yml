@@ -1,15 +1,15 @@
 name: Step 1, Copilot Extension in a Codespace
 
-# This step triggers after push to main#devcontainer.json.
+# This step triggers after push to main#.devcontainer.json.
 # This workflow updates from step 1 to step 2.
 
-# This will run every time we main#devcontainer.json
+# This will run every time we main#.devcontainer.json
 # Reference: https://docs.github.com/en/actions/learn-github-actions/events-that-trigger-workflows
 on:
   workflow_dispatch:
   push:
     paths:
-      - ".devcontainer/devcontainer.json"
+      - "..devcontainer/.devcontainer.json"
     branches:
       - main
 
@@ -57,7 +57,7 @@ jobs:
       - name: Check workflow contents, jobs
         uses: skills/action-check-file@v1
         with:
-          file: ".devcontainer/devcontainer.json"
+          file: "..devcontainer/.devcontainer.json"
           search: "GitHub.copilot"
 
       # In README.md, switch step 1 for step 2.
